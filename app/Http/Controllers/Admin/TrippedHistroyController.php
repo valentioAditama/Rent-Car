@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class TrippedHistroyController extends Controller
 {
-    //
+    public function index()
+    {
+        return view('');
+    }
 }

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ViewCarsController extends Controller
 {
-    public function index() {
-        return view('admin.show-cars');
+    public function index()
+    {
     }
 }

@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => 'v10.2.3',
-        'version' => '10.2.3.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '2e847e7e2bd0969014b926ce884f8e618ae36281',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -355,6 +355,26 @@
                 0 => 'v10.13.5',
             ),
         ),
+        'jean85/pretty-package-versions' => array(
+            'pretty_version' => '2.0.5',
+            'version' => '2.0.5.0',
+            'reference' => 'ae547e455a3d8babd07b96966b17d7fd21d9c6af',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../jean85/pretty-package-versions',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'jenssegers/mongodb' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '1303b5fb05d1c8f06d29c55b79e3e5468c946f45',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../jenssegers/mongodb',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -371,9 +391,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'v10.2.3',
-            'version' => '10.2.3.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '2e847e7e2bd0969014b926ce884f8e618ae36281',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -477,6 +497,15 @@
             'install_path' => __DIR__ . '/../mockery/mockery',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'mongodb/mongodb' => array(
+            'pretty_version' => '1.15.0',
+            'version' => '1.15.0.0',
+            'reference' => '3a681a3b2f2c0ebac227a3b86bb9057d0e6eb8f8',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mongodb/mongodb',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'monolog/monolog' => array(
             'pretty_version' => '3.3.1',
@@ -724,8 +753,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '3.0.0',
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(

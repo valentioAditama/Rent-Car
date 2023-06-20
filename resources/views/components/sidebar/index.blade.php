@@ -1,8 +1,8 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('index.admin.show-cars')}}">
+        <div class="sidebar-brand-icon">
+            <i class="fas fa-car"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Rent Car</div>
     </a>
@@ -11,7 +11,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item active">
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('index.admin.show-cars') }}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Tampilkan Mobil</span></a>
@@ -19,10 +19,18 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="{{ route('index.admin.tripped-history') }}">
             <i class="fas fa-fw fa-table"></i>
             <span>Riwayat Perjalanan</span></a>
     </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('index.admin.inquery') }}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Inquery</span></a>
+    </li>
+
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <!-- Scripts -->
     @vite(['resources/js/app.js'])
 
@@ -26,21 +27,11 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
-        <!-- Sidebar -->
-        @include('components.sidebar.index')
-        <!-- End of Sidebar -->
-
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
             <div id="content">
-
-                <!-- Topbar -->
-                @include('components.navbar.index')
-                <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
                 @yield('content')
                 <!-- /.container-fluid -->

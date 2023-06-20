@@ -2,81 +2,39 @@
 
 @section('content')
 <div class="container-fluid">
-  <h4>Tripped History</h4>
+  <div class="d-flex justify-content-between">
+    <h4>Tripped History</h4>
+    <a href="{{ route('admin.tripped-history.add') }}" class="btn btn-success">Add Tripped History</a>
+  </div>
 
   <div class="mt-3">
-    <form action="" method="post" enctype="multipart/form-data">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="id">id</label>
-            <input type="text" class="form-control form-control-sm" id="id" aria-describedby="id" required>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="cusomter_contact">Customer Contact</label>
-            <input type="text" class="form-control form-control-sm" id="cusomter_contact" aria-describedby="cusomter_contact" required>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="customer_name">Customer Name</label>
-            <input type="text" class="form-control form-control-sm" id="customer_name" name="customer_name" required>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="customer_nic">Customer NIC</label>
-            <input type="text" class="form-control form-control-sm" id="customer_nic">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="time_in">Time In</label>
-            <input type="text" class="form-control form-control-sm" name="time_in" id="time_in" required>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="time_out">Time Out</label>
-            <input type="text" class="form-control form-control-sm" name="time_out" id="time_out" required>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="date_in">Date In</label>
-            <input type="date" class="form-control form-control-sm" name="date_in" id="date_in" required>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="date_out">Date Out</label>
-            <input type="text" class="form-control form-control-sm" name="date_out" id="date_out" required>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="car_model">Car Model</label>
-            <input type="color" class="form-control form-control-sm" name="car_model" id="car_model" required>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="agent">Agent</label>
-            <input type="text" class="form-control form-control-sm" name="agent" id="agent" required>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="total_amount">Total Amount</label>
-            <input type="text" class="form-control form-control-sm" name="total_amount" id="total_amount" required>
-          </div>
-        </div>
-      </div>
-      <button class="btn btn-sm btn-success">Save</button>
-      <a href="{{route('index.admin.show-cars')}}" class="btn btn-sm btn-secondary">kembali</a>
-    </form>
+    <table class="table table-sm table-light table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ID</th>
+          <th scope="col">Customer Contact</th>
+          <th scope="col">Customer Name</th>
+          <th scope="col">Customer NIC</th>
+          <th scope="col">Time In</th>
+          <th scope="col">Time Out</th>
+          <th scope="col">Date In</th>
+          <th scope="col">Date Out</th>
+          <th scope="col">Car Model</th>
+          <th scope="col">Agent</th>
+          <th scope="col">Total Amount</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 @endsection

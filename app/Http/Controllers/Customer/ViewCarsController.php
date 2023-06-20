@@ -9,5 +9,6 @@ class ViewCarsController extends Controller
 {
     public function index()
     {
+        return view('customer.index');
     }
 }

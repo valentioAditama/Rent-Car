@@ -33,8 +33,8 @@ Route::prefix('admin')->group(function() {
     Route::get('/show-cars', [ShowCarsController::class, 'index'])->name('index.admin.show-cars');
 
     // owner cars
-    Route::get('/owner-cars', [OwnersCarController::class, 'index'])->name('index.admin.owner-cars');
     Route::prefix('owner-cars')->group(function() {
+        Route::get('/add', [OwnersCarController::class, 'index'])->name('index.admin.add');
         Route::post('/store', [OwnersCarController::class, 'store'])->name('admin.owner-cars.store');
         Route::post('/update', [OwnersCarController::class, 'update'])->name('admin.owner-cars.update');
         Route::delete('/delete', [OwnersCarController::class, 'destroy'])->name('admin.owner-cars.destroy');

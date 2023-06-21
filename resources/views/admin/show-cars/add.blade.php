@@ -5,18 +5,19 @@
   <h4>Add Cars</h4>
 
   <div class="mt-3">
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.owner-cars.store') }}" method="post" enctype="multipart/form-data">
+      @csrf
       <div class="row">
         <div class="col-md-4">
           <div class="form-group">
             <label for="nopol">Nopol</label>
-            <input type="text" class="form-control form-control-sm" id="nopol" aria-describedby="nopol" required>
+            <input type="text" class="form-control form-control-sm" name="nopol" id="nopol" aria-describedby="nopol" required>
           </div>
         </div>
         <div class="col-md-4">
           <div class="form-group">
             <label for="merk">merk</label>
-            <input type="text" class="form-control form-control-sm" id="merk" aria-describedby="merk" required>
+            <input type="text" class="form-control form-control-sm" name="merk" id="merk" aria-describedby="merk" required>
           </div>
         </div>
         <div class="col-md-4">
@@ -39,7 +40,7 @@
         <div class="col-md-4">
           <div class="form-group">
             <label for="Kilometer-awal">Kilometer Awal</label>
-            <input type="text" class="form-control form-control-sm" id="Kilometer-awal" aria-describedby="Kilometer-awal" placeholder="Kilometer awal">
+            <input type="text" class="form-control form-control-sm" name="kilometerAwal" id="Kilometer-awal" aria-describedby="Kilometer-awal" placeholder="Kilometer awal">
           </div>
         </div>
         <div class="col-md-4">
@@ -63,7 +64,7 @@
         <div class="col-md-4">
           <div class="form-group">
             <label for="warna">Warna</label>
-            <input type="color" class="form-control form-control-sm" name="warna" id="warna" required>
+            <input type="text" class="form-control form-control-sm" name="warna" id="warna" required>
           </div>
         </div>
         <div class="col-md-4">
@@ -79,7 +80,7 @@
           </div>
         </div>
       </div>
-      <button class="btn btn-sm btn-success">Save</button>
+      <button type="submit" class="btn btn-sm btn-success">Save</button>
       <a href="{{route('index.admin.show-cars')}}" class="btn btn-sm btn-secondary">kembali</a>
     </form>
   </div>

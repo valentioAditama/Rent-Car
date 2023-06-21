@@ -10,7 +10,7 @@
       <button type="submit" class="btn btn-primary mb-2">Search</button>
     </form>
     <div>
-      <a href="{{ route('index.admin.owner-cars') }}" class="btn btn-success">Add Data</a>
+      <a href="{{ route('index.admin.add') }}" class="btn btn-success">Add Data</a>
     </div>
   </div>
   <div class="row mt-4">

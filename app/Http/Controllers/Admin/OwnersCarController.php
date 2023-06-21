@@ -45,9 +45,8 @@ class OwnersCarController extends Controller
                 'passenger' => $request->passenger,
                 'detail' => $request->detail
             ]);
-
-            return "berhasil";
-
+            // return redirect back 
+            return redirect()->back()->with(['success' => 'Data Berhasil Di Tambahkan']);
         } catch (\Throwable $error) {
             return $error->getMessage();
         }

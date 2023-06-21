@@ -27,14 +27,16 @@ Route::get('/inquery/{id}', [InqueryController::class, 'index'])->name('index.cu
 Route::get('/booking-cars/{id}', [BookingController::class, 'index'])->name('index.customer.booking-cars');
 
 // admin
-Route::prefix('admin')->group(function() {
+Route::prefix('admin')->group(function () {
     // registration custoemr
     Route::get('/registration', [RegistrationController::class, 'index'])->name('index.admin.registration');
     Route::get('/show-cars', [ShowCarsController::class, 'index'])->name('index.admin.show-cars');
 
     // owner cars
-    Route::prefix('owner-cars')->group(function() {
-        Route::get('/add', [OwnersCarController::class, 'index'])->name('index.admin.add');
+    Route::prefix('owner-cars')->group(function () {
+        Route::get('/create', [OwnersCarController::class, 'create'])->name('index.admin.create');
+        Route::get('/edit', [OwnersCarController::class, 'edit'])->name('index.admin.edit');
+
         Route::post('/store', [OwnersCarController::class, 'store'])->name('admin.owner-cars.store');
         Route::post('/update', [OwnersCarController::class, 'update'])->name('admin.owner-cars.update');
         Route::delete('/delete', [OwnersCarController::class, 'destroy'])->name('admin.owner-cars.destroy');
@@ -42,7 +44,7 @@ Route::prefix('admin')->group(function() {
 
     // tripped history
     Route::get('/tripped-history', [TrippedHistroyController::class, 'index'])->name('index.admin.tripped-history');
-    Route::prefix('tripped-history')->group(function() {
+    Route::prefix('tripped-history')->group(function () {
         Route::get('/add', [TrippedHistroyController::class, 'add'])->name('admin.tripped-history.add');
         Route::post('/store', [TrippedHistroyController::class, 'store'])->name('admin.tripped-history.store');
         Route::post('/update', [TrippedHistroyController::class, 'update'])->name('admin.tripped-history.update');
@@ -51,11 +53,10 @@ Route::prefix('admin')->group(function() {
 
     // inquery
     Route::get('/inquery', [AdminInqueryController::class, 'index'])->name('index.admin.inquery');
-    Route::prefix('inquery')->group(function() {
+    Route::prefix('inquery')->group(function () {
         Route::get('/add', [AdminInqueryController::class, 'add'])->name('admin.inquery.add');
         Route::post('/store', [AdminInqueryController::class, 'store'])->name('admin.inquery.store');
         Route::post('/update', [AdminInqueryController::class, 'update'])->name('admin.inquery.update');
         Route::delete('/delete', [AdminInqueryController::class, 'destroy'])->name('admin.inquery.destroy');
     });
-
 });

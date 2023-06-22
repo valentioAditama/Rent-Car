@@ -16,7 +16,7 @@
                   <div class="mb-3">
                     <input type="hidden" name="car_id" value="{{$datas->id}}">
                     <label for="nopol" class="form-label">Nopol</label>
-                    <input type="text" class="form-control form-control-sm" id="nopol" name="nopol" value="{{$datas->nopol}}" required>
+                    <input type="text" class="form-control form-control-sm" id="nopol" name="nopol" value="{{$datas->nopol}}" required readonly>
                   </div>
                   <div class="mb-3">
                     <div class="row">
@@ -44,7 +44,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="car_model" class="form-label">Car Model</label>
-                    <input type="text" class="form-control form-control-sm" id="car_model" name="car_model" value="{{$datas->carModel}}">
+                    <input type="text" class="form-control form-control-sm" id="car_model" name="car_model" value="{{$datas->carModel}}" readonly>
                   </div>
                 </div>
               </div>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control form-control-sm" id="email" name="email" required>
+                  <input type="email" class="form-control form-control-sm" id="email" name="email">
                 </div>
               </div>
             </div>

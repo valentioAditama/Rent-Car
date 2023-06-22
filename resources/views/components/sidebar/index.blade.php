@@ -1,8 +1,8 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color: #3F3B3B;" id="accordionSidebar">
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('index.admin.show-cars')}}">
         <div class="sidebar-brand-icon">
-            <i class="fas fa-car"></i>
+            <img src="https://cdn-icons-png.flaticon.com/512/1934/1934273.png" height="50" alt="">
         </div>
         <div class="sidebar-brand-text mx-3">Rent Car</div>
     </a>

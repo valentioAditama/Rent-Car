@@ -4,7 +4,6 @@
 <div class="container-fluid">
   <div class="d-flex justify-content-between">
     <h4>Tripped History</h4>
-    <a href="{{ route('admin.tripped-history.add') }}" class="btn btn-success">Add Tripped History</a>
   </div>
 
   <div class="mt-3">
@@ -12,7 +11,6 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">ID</th>
           <th scope="col">Customer Contact</th>
           <th scope="col">Customer Name</th>
           <th scope="col">Customer NIC</th>
@@ -27,14 +25,30 @@
         </tr>
       </thead>
       <tbody>
+        @php $no=1; @endphp
+        @foreach($data as $datas)
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <th scope="row">{{$no++}}</th>
+          <td>{{$datas->contact}}</td>
+          <td>{{$datas->customer_name}}</td>
+          <td>{{$datas->customer_nic}}</td>
+          <td>{{$datas->time_in}}</td>
+          <td>{{$datas->time_out}}</td>
+          <td>{{$datas->date_in}}</td>
+          <td>{{$datas->date_out}}</td>
+          <td>{{$datas->car_model}}</td>
+          <td>{{$datas->agent}}</td>
+          <td>{{$datas->total_amount}}</td>
+          <td>
+            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-update-trippedHistory{{$datas->id}}" data-bs-toggle="tooltip" data-bs-placement="top" title="Update Status">
+              <i class="fa-solid fa-pen-nib"></i>
+            </button>
+          </td>
         </tr>
+        @endforeach
       </tbody>
     </table>
   </div>
 </div>
+@include('components.modal.tripped-history')
 @endsection

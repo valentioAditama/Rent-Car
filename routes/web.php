@@ -6,7 +6,6 @@ use App\Http\Controllers\Admin\RegistrationController;
 use App\Http\Controllers\Admin\ShowCarsController;
 use App\Http\Controllers\Admin\TrippedHistroyController;
 use App\Http\Controllers\Customer\BookingController;
-use App\Http\Controllers\Customer\InqueryController;
 use App\Http\Controllers\Customer\ViewCarsController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +50,13 @@ Route::prefix('admin')->group(function () {
         Route::delete('/delete/{id}', [OwnersCarController::class, 'destroy'])->name('admin.owner-cars.destroy');
     });
 
+    // inquery
+    Route::get('/inquery', [AdminInqueryController::class, 'index'])->name('index.admin.inquery');
+    Route::prefix('inquery')->group(function () {
+        Route::post('/update/{id}', [AdminInqueryController::class, 'update'])->name('admin.inquery.update');
+        Route::delete('/delete/{id}', [AdminInqueryController::class, 'destroy'])->name('admin.inquery.destroy');
+    });
+
     // tripped history
     Route::get('/tripped-history', [TrippedHistroyController::class, 'index'])->name('index.admin.tripped-history');
     Route::prefix('tripped-history')->group(function () {
@@ -58,12 +64,5 @@ Route::prefix('admin')->group(function () {
         Route::post('/store', [TrippedHistroyController::class, 'store'])->name('admin.tripped-history.store');
         Route::post('/update/{id}', [TrippedHistroyController::class, 'update'])->name('admin.tripped-history.update');
         Route::delete('/delete/{id}', [TrippedHistroyController::class, 'destroy'])->name('admin.tripped-history.destroy');
-    });
-
-    // inquery
-    Route::get('/inquery', [AdminInqueryController::class, 'index'])->name('index.admin.inquery');
-    Route::prefix('inquery')->group(function () {                
-        Route::post('/update/{id}', [AdminInqueryController::class, 'update'])->name('admin.inquery.update');
-        Route::delete('/delete/{id}', [AdminInqueryController::class, 'destroy'])->name('admin.inquery.destroy');
     });
 });

@@ -37,4 +37,6 @@
   </div>
 </div>
 @include('components.modal.delete');
+@include('components.notifications.index')
+
 @endsection

@@ -90,4 +90,6 @@
     </form>
   </div>
 </div>
+@include('components.notifications.index')
+
 @endsection

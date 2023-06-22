@@ -25,6 +25,9 @@
             <h5 class="card-title">{{$datas->passenger}} Seat</h5>
           </div>
           <p class="card-text">{{$datas->detail}}</p>
+          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-detail{{$datas->id}}">
+            <i class="fa-solid fa-eye"></i>
+          </button>
           <a href="{{route('index.admin.edit', $datas->id)}}" class="btn btn-primary">
             <i class="fa-solid fa-pen-to-square"></i>
           </a>
@@ -38,4 +41,7 @@
   </div>
 </div>
 @include('components.modal.delete');
+@include('components.modal.detail-cars');
+@include('components.notifications.index')
+
 @endsection

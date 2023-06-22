@@ -31,6 +31,9 @@
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-booked{{$datas->id}}">
                         Booked Now
                     </button>
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-detail{{$datas->id}}">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -38,4 +41,6 @@
     </div>
 </div>
 @include('components.modal.booked')
+@include('components.notifications.index')
+
 @endsection

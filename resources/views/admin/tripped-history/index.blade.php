@@ -51,4 +51,6 @@
   </div>
 </div>
 @include('components.modal.tripped-history')
+@include('components.notifications.index')
+
 @endsection

@@ -19,16 +19,16 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('index.admin.tripped-history') }}">
+        <a class="nav-link" href="{{ route('index.admin.inquery') }}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Riwayat Perjalanan</span></a>
+            <span>Inquery</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('index.admin.inquery') }}">
+        <a class="nav-link" href="{{ route('index.admin.tripped-history') }}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Inquery</span></a>
+            <span>Riwayat Perjalanan</span></a>
     </li>
 
 

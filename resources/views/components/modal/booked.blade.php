@@ -16,16 +16,16 @@
                   <div class="mb-3">
                     <input type="hidden" name="car_id" value="{{$datas->id}}">
                     <label for="nopol" class="form-label">Nopol</label>
-                    <input type="text" class="form-control form-control-sm" id="nopol" name="nopol" value="{{$datas->nopol}}">
+                    <input type="text" class="form-control form-control-sm" id="nopol" name="nopol" value="{{$datas->nopol}}" required>
                   </div>
                   <div class="mb-3">
                     <div class="row">
                       <div class="col-md-6">
-                        <label for="nopol" class="form-label">Date In</label>
+                        <label for="date_in" class="form-label">Date In</label>
                         <input type="date" class="form-control form-control-sm" name="date_in" required>
                       </div>
                       <div class="col-md-6">
-                        <label for="nopol" class="form-label">Date Out</label>
+                        <label for="date_out" class="form-label">Date Out</label>
                         <input type="date" class="form-control form-control-sm" name="date_out" required>
                       </div>
                     </div>
@@ -33,18 +33,18 @@
                   <div class="mb-3">
                     <div class="row">
                       <div class="col-md-6">
-                        <label for="nopol" class="form-label">Time In</label>
+                        <label for="time_in" class="form-label">Time In</label>
                         <input type="time" class="form-control form-control-sm" name="time_in" required>
                       </div>
                       <div class="col-md-6">
-                        <label for="nopol" class="form-label">Time Out</label>
+                        <label for="time_out" class="form-label">Time Out</label>
                         <input type="time" class="form-control form-control-sm" name="time_out" required>
                       </div>
                     </div>
                   </div>
                   <div class="mb-3">
-                    <label for="carModel" class="form-label">Car Model</label>
-                    <input type="text" class="form-control form-control-sm" id="carModel" name="car_model" value="{{$datas->carModel}}">
+                    <label for="car_model" class="form-label">Car Model</label>
+                    <input type="text" class="form-control form-control-sm" id="car_model" name="car_model" value="{{$datas->carModel}}">
                   </div>
                 </div>
               </div>

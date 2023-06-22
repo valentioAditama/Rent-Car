@@ -10,7 +10,7 @@ class ViewCarsController extends Controller
 {
     public function index()
     {
-        $data = Cars::all();
+        $data = Cars::all()->where('status', '=', 'Available');
         return view('customer.index', compact('data'));
     }
 

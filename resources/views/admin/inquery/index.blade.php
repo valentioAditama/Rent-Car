@@ -12,22 +12,26 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Nopol</th>
-          <th scope="col">Nama</th>
+          <th scope="col">Custome rName</th>
           <th scope="col">Email</th>
-          <th scope="col">No.Telp</th>
-          <th scope="col">Pesan</th>
+          <th scope="col">Contact</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
+        @php $no=1; @endphp
+        @foreach($data as $datas)
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+          <th scope="row">{{$no++}}</th>
+          <td>{{$datas->nopol}}</td>
+          <td>{{$datas->customer_name}}</td>
+          <td>{{$datas->contact}}</td>
+          <td>{{$datas->email}}</td>
+          <td>
+            <button class="btn btn-sm btn-primary">Update Status</button>
+          </td>
         </tr>
+        @endforeach
       </tbody>
     </table>
   </div>

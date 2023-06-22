@@ -22,5 +22,6 @@ class Cars extends Model
         'warna',
         'passenger',
         'detail',
+        'status',
     ];
 }

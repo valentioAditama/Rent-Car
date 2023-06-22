@@ -4,9 +4,8 @@
 <div class="container-fluid">
   <div class="row d-flex justify-content-between">
     <form class="form-inline" action="{{route('index.admin.search')}}" method="get">
-      @csrf
       <div class="form-group mx-sm-3 mb-2">
-        <input type="text" class="form-control w-100" name="search" id="search" placeholder="Search Model">
+        <input type="text" class="form-control w-100" name="search" id="inputPassword2" value="{{$valueSearch}}" placeholder="Search Model">
       </div>
       <button type="submit" class="btn btn-primary mb-2">Search</button>
     </form>

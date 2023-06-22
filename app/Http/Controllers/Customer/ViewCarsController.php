@@ -3,12 +3,29 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cars;
 use Illuminate\Http\Request;
 
 class ViewCarsController extends Controller
 {
     public function index()
     {
-        return view('customer.index');
+        $data = Cars::all();
+        return view('customer.index', compact('data'));
+    }
+
+    public function search(Request $request)
+    {
+        try {
+            $data = Cars::where('carModel', 'like', '%' . $request->search . '%')
+                ->orwhere('merk', 'like', '%' . $request->search . '%')
+                ->orwhere('nopol', 'like', '%' . $request->search . '%')
+                ->get();
+
+            $search = $request->search;
+            return view('customer.search', compact('data', 'search'));
+        } catch (\Throwable $error) {
+            return $error->getMessage();
+        }
     }
 }

@@ -40,7 +40,7 @@
         <div class="col-md-4">
           <div class="form-group">
             <label for="Kilometer-awal">Kilometer Awal</label>
-            <input type="text" class="form-control form-control-sm" name="kilometerAwal" id="Kilometer-awal" aria-describedby="Kilometer-awal" placeholder="Kilometer awal">
+            <input type="number" class="form-control form-control-sm" name="kilometerAwal" id="Kilometer-awal" aria-describedby="Kilometer-awal" placeholder="Kilometer awal">
           </div>
         </div>
         <div class="col-md-4">

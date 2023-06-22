@@ -62,9 +62,7 @@ Route::prefix('admin')->group(function () {
 
     // inquery
     Route::get('/inquery', [AdminInqueryController::class, 'index'])->name('index.admin.inquery');
-    Route::prefix('inquery')->group(function () {
-        Route::get('/add', [AdminInqueryController::class, 'add'])->name('admin.inquery.add');
-        Route::post('/store', [AdminInqueryController::class, 'store'])->name('admin.inquery.store');
+    Route::prefix('inquery')->group(function () {                
         Route::post('/update/{id}', [AdminInqueryController::class, 'update'])->name('admin.inquery.update');
         Route::delete('/delete/{id}', [AdminInqueryController::class, 'destroy'])->name('admin.inquery.destroy');
     });

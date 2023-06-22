@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Jenssegers\Mongodb\Eloquent\Model;
 
-class Booking extends Model
+class TrippedHistory extends Model
 {
     use HasFactory;
     protected $connection = "mongodb";
-    protected $collection = "car_booking";
+    protected $collection = "tripped_history";
 
     protected $fillable = [
         'nopol',
@@ -21,6 +21,7 @@ class Booking extends Model
         'customer_nic',
         'customer_name',
         'contact',
-        'email',
+        'agent',
+        'total_amount'
     ];
 }

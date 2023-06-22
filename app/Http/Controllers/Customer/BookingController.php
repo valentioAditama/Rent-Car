@@ -44,7 +44,6 @@ class BookingController extends Controller
                 'customer_nic' => 'required',
                 'customer_name' => 'required',
                 'contact' => 'required',
-                'email' => 'required',
             ]);
 
             // store to database

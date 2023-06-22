@@ -20,8 +20,8 @@
     <div class="row mt-4 mb-3 ">
         @foreach($data as $datas)
         <div class="col-md-4">
-            <div class="card" style="width: 30rem;">
-                <img src="{{ asset('storage/owner-cars/' . $datas->pitcure1) }}" class="card-img-top img-fluid" alt="...">
+            <div class="card">
+                <img src="{{ asset('storage/owner-cars/' . $datas->pitcure1) }}" height="250" alt="...">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <h5 class="card-title">{{$datas->merk}}</h5>

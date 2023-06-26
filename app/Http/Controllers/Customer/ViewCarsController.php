@@ -23,7 +23,7 @@ class ViewCarsController extends Controller
                 ->get();
 
             $search = $request->search;
-            return view('customer.search', compact('data', 'search'));
+            return view('customer.index', compact('data', 'search'));
         } catch (\Throwable $error) {
             return $error->getMessage();
         }

@@ -15,6 +15,25 @@ class TrippedHistroyController extends Controller
         return view('admin.tripped-history.index', compact('data'));
     }
 
+    public function search(Request $request)
+    {
+        $data = TrippedHistory::where('nopol', 'like', '%' . $request->search . '%')
+            ->orwhere('date_in', 'like', '%' . $request->search . '%')
+            ->orwhere('date_out', 'like', '%' . $request->search . '%')
+            ->orwhere('time_in', 'like', '%' . $request->search . '%')
+            ->orwhere('time_out', 'like', '%' . $request->search . '%')
+            ->orwhere('car_model', 'like', '%' . $request->search . '%')
+            ->orwhere('customer_nic', 'like', '%' . $request->search . '%')
+            ->orwhere('customer_name', 'like', '%' . $request->search . '%')
+            ->orwhere('contact', 'like', '%' . $request->search . '%')
+            ->orwhere('agent', 'like', '%' . $request->search . '%')
+            ->orwhere('total_amount', 'like', '%' . $request->search . '%')
+            ->get();
+
+        // return redirect back
+        return view('admin.tripped-history.index', compact('data'));
+    }
+
     public function add()
     {
         return view('admin.tripped-history.add');

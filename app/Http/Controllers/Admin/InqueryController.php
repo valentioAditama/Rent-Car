@@ -17,10 +17,22 @@ class InqueryController extends Controller
         return view('admin.inquery.index', compact('data'));
     }
 
+    public function search(Request $request)
+    {
+        $data = Inquery::where('nopol', 'like', '%' . $request->search . '%')
+            ->orwhere('customer_name', 'like', '%' . $request->search . '%')
+            ->orwhere('contact', 'like', '%' . $request->search . '%')
+            ->orwhere('email', 'like', '%' . $request->search . '%')
+            ->orwhere('status', 'like', '%' . $request->search . '%')
+            ->get();
+
+        return view('admin.inquery.index', compact('data'));
+    }
+
     public function update(Request $request, $id)
     {
         try {
-            
+
             // get data id 
             $data = Inquery::find($id);
             $data->update($request->all());
@@ -54,8 +66,6 @@ class InqueryController extends Controller
                 } else {
                     return redirect()->back();
                 }
-
-                
             } else {
                 // update status cars
                 $dataCars = Cars::where('nopol', '=', $data->nopol)->first();

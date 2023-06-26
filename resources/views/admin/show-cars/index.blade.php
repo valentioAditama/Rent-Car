@@ -9,6 +9,7 @@
         <input type="text" class="form-control w-100" name="search" id="search" placeholder="Search Model">
       </div>
       <button type="submit" class="btn btn-primary mb-2">Search</button>
+      <a href="{{ route('index.admin.show-cars') }}" class="btn btn-secondary mb-2 ml-2">Reset Data</a>
     </form>
     <div>
       <a href="{{ route('index.admin.create') }}" class="btn btn-success">Add Data</a>
@@ -18,7 +19,7 @@
     @foreach($data as $datas)
     <div class="col-md-4">
       <div class="card">
-        <img src="{{ asset('storage/owner-cars/' . $datas->pitcure1) }}" height="200" alt="...">
+        <img src="{{ asset('storage/owner-cars/' . $datas->pitcure1) }}" class="image-cars" alt="...">
         <div class="card-body">
           <div class="d-flex justify-content-between">
             <h5 class="card-title">{{$datas->merk}}</h5>

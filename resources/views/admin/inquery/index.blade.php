@@ -4,6 +4,13 @@
 <div class="container-fluid">
   <div class="d-flex justify-content-between">
     <h4>Inquery</h4>
+    <form class="form-inline" action="{{route('index.admin.inquery-search')}}" method="get">
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control w-100" name="search" id="search" placeholder="Search Inquery">
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">Search</button>
+      <a href="{{ route('index.admin.inquery') }}" class="btn btn-secondary  mb-2 ml-2">Reset Data</a>
+    </form>
   </div>
 
   <div class="mt-3">

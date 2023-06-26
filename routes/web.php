@@ -53,6 +53,10 @@ Route::prefix('admin')->group(function () {
     // inquery
     Route::get('/inquery', [AdminInqueryController::class, 'index'])->name('index.admin.inquery');
     Route::prefix('inquery')->group(function () {
+        // search
+        Route::get('/search', [AdminInqueryController::class, 'search'])->name('index.admin.inquery-search');
+
+        // update and delete data
         Route::post('/update/{id}', [AdminInqueryController::class, 'update'])->name('admin.inquery.update');
         Route::delete('/delete/{id}', [AdminInqueryController::class, 'destroy'])->name('admin.inquery.destroy');
     });
@@ -60,6 +64,11 @@ Route::prefix('admin')->group(function () {
     // tripped history
     Route::get('/tripped-history', [TrippedHistroyController::class, 'index'])->name('index.admin.tripped-history');
     Route::prefix('tripped-history')->group(function () {
+        // search data
+        Route::get('/search', [TrippedHistroyController::class, 'search'])->name('index.admin.tripped-history-search');
+
+        
+        // crud data
         Route::get('/add', [TrippedHistroyController::class, 'add'])->name('admin.tripped-history.add');
         Route::post('/store', [TrippedHistroyController::class, 'store'])->name('admin.tripped-history.store');
         Route::post('/update/{id}', [TrippedHistroyController::class, 'update'])->name('admin.tripped-history.update');

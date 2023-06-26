@@ -18,3 +18,9 @@
     color: white;
     z-index: 1;
 }
+
+/* card cars */
+.image-cars {
+    object-fit: cover;
+    height: 300px;
+}

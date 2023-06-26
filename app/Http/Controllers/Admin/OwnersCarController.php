@@ -24,7 +24,7 @@ class OwnersCarController extends Controller
                 ->get();
 
             $valueSearch = $request->search;
-            return view('admin.show-cars.search', compact('data', 'valueSearch'));
+            return view('admin.show-cars.index', compact('data', 'valueSearch'));
         } catch (\Throwable $error) {
             return $error->getMessage();
         }

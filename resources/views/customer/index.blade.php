@@ -9,19 +9,22 @@
 </div>
 
 <div class="container-fluid mt-4">
-    <div class="row d-flex justify-content-between">
+    <div class="row d-flex justify-content-start">
         <form class="form-inline" action="{{route('index.customer.search')}}" method="get">
             <div class="form-group mx-sm-3 mb-2">
                 <input type="text" class="form-control w-100" name="search" id="search" placeholder="Search Model">
             </div>
             <button type="submit" class="btn btn-primary mb-2">Search</button>
         </form>
+        <a href="{{ route('index.customer') }}">
+            <button class="btn btn-secondary mb-2 ml-2">Reset Data</button>
+        </a>
     </div>
     <div class="row mt-4 mb-3 ">
         @foreach($data as $datas)
         <div class="col-md-4">
             <div class="card">
-                <img src="{{ asset('storage/owner-cars/' . $datas->pitcure1) }}" height="250" alt="...">
+                <img src="{{ asset('storage/owner-cars/' . $datas->pitcure1) }}" class="image-cars" alt="...">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <h5 class="card-title">{{$datas->merk}}</h5>

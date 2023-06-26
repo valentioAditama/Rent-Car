@@ -58,7 +58,7 @@
                   <input type="text" class="form-control form-control-sm" id="customer_name" name="customer_name" required>
                 </div>
                 <div class="mb-3">
-                  <label for="contact" class="form-label">Contact</label>
+                  <label for="contact" class="form-label">Contact Number</label>
                   <input type="number" class="form-control form-control-sm" id="contact" name="contact" required>
                 </div>
                 <div class="mb-3">

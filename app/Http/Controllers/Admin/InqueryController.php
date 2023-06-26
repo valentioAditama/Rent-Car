@@ -32,7 +32,6 @@ class InqueryController extends Controller
     public function update(Request $request, $id)
     {
         try {
-
             // get data id 
             $data = Inquery::find($id);
             $data->update($request->all());
@@ -46,26 +45,19 @@ class InqueryController extends Controller
 
                 $dataCarBooking = Booking::where('nopol', '=', $data->nopol)->first();
 
-                // find data tripped history
-                $dataTrippedHistory = TrippedHistory::where('nopol', '=', $data->nopol)->first();
+                // store data to tripped history
+                TrippedHistory::create([
+                    'nopol' => $dataCarBooking->nopol,
+                    'date_in' => $dataCarBooking->date_in,
+                    'date_out' => $dataCarBooking->date_out,
+                    'time_in' => $dataCarBooking->time_in,
+                    'time_out' => $dataCarBooking->time_out,
+                    'car_model' => $dataCarBooking->car_model,
+                    'customer_nic' => $dataCarBooking->customer_nic,
+                    'customer_name' => $request->customer_name,
+                    'contact' => $dataCarBooking->contact
+                ]);
 
-                // check data tripped history 
-                if ($dataTrippedHistory == null) {
-                    // store data to tripped history
-                    TrippedHistory::create([
-                        'nopol' => $dataCarBooking->nopol,
-                        'date_in' => $dataCarBooking->date_in,
-                        'date_out' => $dataCarBooking->date_out,
-                        'time_in' => $dataCarBooking->time_in,
-                        'time_out' => $dataCarBooking->time_out,
-                        'car_model' => $dataCarBooking->car_model,
-                        'customer_nic' => $dataCarBooking->customer_nic,
-                        'customer_name' => $dataCarBooking->customer_name,
-                        'contact' => $dataCarBooking->contact
-                    ]);
-                } else {
-                    return redirect()->back();
-                }
             } else {
                 // update status cars
                 $dataCars = Cars::where('nopol', '=', $data->nopol)->first();

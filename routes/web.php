@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\OwnersCarController;
 use App\Http\Controllers\Admin\RegistrationController;
 use App\Http\Controllers\Admin\ShowCarsController;
 use App\Http\Controllers\Admin\TrippedHistroyController;
+use App\Http\Controllers\authentication\AuthenticationController;
 use App\Http\Controllers\Customer\BookingController;
 use App\Http\Controllers\Customer\ViewCarsController;
 use Illuminate\Support\Facades\Route;
@@ -20,16 +21,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// login page
+Route::get('/login', [AuthenticationController::class, 'loginIndex']);
+Route::post('/login', [AuthenticationController::class, 'login']);
+Route::get('/register', [AuthenticationController::class, 'registerIndex']);
+Route::post('/register', [AuthenticationController::class, 'register']);
+Route::post('/logout', [AuthenticationController::class, 'logout']);
+
 // customer
 Route::get('/', [ViewCarsController::class, 'index'])->name('index.customer');
 Route::get('/search', [ViewCarsController::class, 'search'])->name('index.customer.search');
 
 // Booked Cars
-Route::prefix('booked')->group(function () {
-    Route::post('/store', [BookingController::class, 'store'])->name('index.booked.store');
-    Route::post('/update/{id}', [BookingController::class, 'update'])->name('index.booked.update');
-    Route::delete('/delete/{id}', [BookingController::class, 'destroy'])->name('index.booked.destroy');
-});
+Route::post('/booked', [BookingController::class, 'store'])->name('index.booked.store');
 
 // ================
 
@@ -67,7 +71,6 @@ Route::prefix('admin')->group(function () {
         // search data
         Route::get('/search', [TrippedHistroyController::class, 'search'])->name('index.admin.tripped-history-search');
 
-        
         // crud data
         Route::get('/add', [TrippedHistroyController::class, 'add'])->name('admin.tripped-history.add');
         Route::post('/store', [TrippedHistroyController::class, 'store'])->name('admin.tripped-history.store');

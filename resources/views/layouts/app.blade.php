@@ -26,6 +26,9 @@
 </head>
 
 <body id="page-top">
+    
+    <!-- Authentication-->
+    @yield('authentication')
 
     <!-- Page Wrapper -->
     <div id="wrapper">

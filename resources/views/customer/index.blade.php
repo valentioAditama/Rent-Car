@@ -1,7 +1,7 @@
 @extends('layouts.app-user')
 
 @section('content')
-<div class="banner-home d-flex align-items-center justify-content-center" style="background-image: url('https://plus.unsplash.com/premium_photo-1664301939396-90cfdcfee181?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fGNhciUyMHJlbnRhbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60');">
+<div class="banner-home d-flex align-items-center justify-content-center" style="background-image: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
     <div class="text-center">
         <h2 class="text-light">RENTAL MOBIL TERPERCAYA</h2>
         <h3 class="teks-desc">Jasa rental mobil terpercarya di Indonesia, nomor #1 berdasarkan survey automotif Indonesia.</h3>
@@ -35,7 +35,7 @@
                         Booked Now
                     </button>
                     <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-detail{{$datas->id}}">
-                        Lihat Detail
+                        More Detail
                     </button>
                 </div>
             </div>

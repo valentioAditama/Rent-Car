@@ -21,12 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// login page
-Route::get('/login', [AuthenticationController::class, 'loginIndex']);
-Route::post('/login', [AuthenticationController::class, 'login']);
-Route::get('/register', [AuthenticationController::class, 'registerIndex']);
-Route::post('/register', [AuthenticationController::class, 'register']);
-Route::post('/logout', [AuthenticationController::class, 'logout']);
+Auth::routes();
 
 // customer
 Route::get('/', [ViewCarsController::class, 'index'])->name('index.customer');
@@ -78,3 +73,6 @@ Route::prefix('admin')->group(function () {
         Route::delete('/delete/{id}', [TrippedHistroyController::class, 'destroy'])->name('admin.tripped-history.destroy');
     });
 });
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -18,15 +18,22 @@ class AuthenticationController extends Controller
     }
 
     public function login(Request $request) {
-        $credentials = $request->validate([
-            'email' => 'email|required',
-            'password' => 'required'
-        ]);
-        
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+        try {
+            $credentials = $request->validate([
+                'email' => 'email|required',
+                'password' => 'required'
+            ]);
             
-            return redirect()->intended('/', 200);
+            if (Auth::attempt($credentials)) {
+                $request->session()->regenerate();
+                
+                return redirect()->intended('/', 200);
+            } else { 
+                return redirect()->back()->with(['message' => 'Email and Password Invalid']);
+            }
+    
+        } catch (\Throwable $error) {
+            return redirect('/')->with(['message' => 'Berhasil Login']);
         }
     }
 
@@ -38,7 +45,8 @@ class AuthenticationController extends Controller
                 'password' => 'required|min:6'
             ]);
             
-            User::created($formData);    
+            User::create($formData);
+            return redirect()->back()->with(['message' => 'Successfully Register']);    
         } catch (\Throwable $error) {
             return $error->getMessage();
         }

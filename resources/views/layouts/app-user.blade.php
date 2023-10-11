@@ -36,6 +36,9 @@
 
             <!-- Main Content -->
             <div id="content">
+                <!-- navbar -->
+                @include('components.navbar.index')
+                <!--  -->
                 <!-- Begin Page Content -->
                 @yield('content')
                 <!-- /.container-fluid -->

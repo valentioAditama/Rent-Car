@@ -48,7 +48,9 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
+                <div class="mt-3">
                 @yield('content')
+                </div>
                 <!-- /.container-fluid -->
 
             </div>

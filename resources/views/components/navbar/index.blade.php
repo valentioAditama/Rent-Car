@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
         <i class="fa fa-bars"></i>
@@ -34,9 +34,14 @@
             </div>
         </li>
 
-        <div class="topbar-divider d-none d-sm-block"></div>
-
         <!-- Nav Item - User Information -->
+       @if (Auth::guest())
+       <li class="nav-item dropdown no-arrow">
+            <button class="btn btn-sm btn-primary mr-2">
+                <a href="/login" class="text-white">Login</a>
+            </button>
+        </li>
+        @else
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Hi, {{Auth::user()->name}}</span>
@@ -66,6 +71,7 @@
                 </form>
             </div>
         </li>
+        @endif
     </ul>
 </nav>
 

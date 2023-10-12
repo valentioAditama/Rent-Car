@@ -1,3 +1,26 @@
+@if(Auth::guest())
+@foreach($data as $datas)
+<!-- Modal -->
+<div class="modal fade" id="modal-booked{{$datas->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Customer Booked</h5>
+      </div>
+      <div class="modal-body">
+          <div class="row justify-content-center">
+            <h4>Please Login First</h4>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+@endforeach
+@else
 @foreach($data as $datas)
 <!-- Modal -->
 <div class="modal fade" id="modal-booked{{$datas->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -78,3 +101,4 @@
   </div>
 </div>
 @endforeach
+@endif

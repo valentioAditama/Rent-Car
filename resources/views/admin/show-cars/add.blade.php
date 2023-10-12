@@ -39,7 +39,7 @@
         </div>
         <div class="col-md-4">
           <div class="form-group">
-            <label for="Kilometer-awal">Kilometer Awal</label>
+            <label for="Kilometer-awal">Kilometer</label>
             <input type="number" class="form-control form-control-sm" name="kilometerAwal" id="Kilometer-awal" aria-describedby="Kilometer-awal" placeholder="Kilometer awal">
           </div>
         </div>
@@ -63,13 +63,13 @@
         </div>
         <div class="col-md-4">
           <div class="form-group">
-            <label for="warna">Warna</label>
+            <label for="warna">Color</label>
             <input type="text" class="form-control form-control-sm" name="warna" id="warna" required>
           </div>
         </div>
         <div class="col-md-4">
           <div class="form-group">
-            <label for="passenger">Passenger</label>
+            <label for="passenger">Passengers</label>
             <input type="text" class="form-control form-control-sm" name="passenger" id="passenger" required>
           </div>
         </div>

@@ -78,7 +78,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="customer_name" class="form-label">Customer Name</label>
-                  <input type="text" class="form-control form-control-sm" id="customer_name" name="customer_name" required>
+                  <input type="text" class="form-control form-control-sm" id="customer_name" name="customer_name" value="{{Auth::user()->name}}" readonly required>
                 </div>
                 <div class="mb-3">
                   <label for="contact" class="form-label">Contact Number</label>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control form-control-sm" id="email" name="email">
+                  <input type="email" class="form-control form-control-sm" id="email" name="email" value="{{Auth::user()->email}}" readonly required>
                 </div>
               </div>
             </div>

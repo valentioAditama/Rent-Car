@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\api\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cars;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use PhpParser\Node\Expr\Cast\String_;
 
 class OwnersCarController extends Controller
 {
@@ -16,18 +14,20 @@ class OwnersCarController extends Controller
             $data = Cars::where('carModel', 'like', '%' . $request->search . '%')
                 ->orwhere('merk', 'like', '%' . $request->search . '%')
                 ->orwhere('nopol', 'like', '%' . $request->search . '%')
-                ->get();
+                ->paginate(15);
 
-            $valueSearch = $request->search;
-            return view('admin.show-cars.index', compact('data', 'valueSearch'));
+                return response([
+                    'code' => '200', 
+                    'status' => 'OK', 
+                    'data' => $data
+                ], 200);
         } catch (\Throwable $error) {
-            return $error->getMessage();
+            return response([
+                'code' => '400', 
+                'status' => 'Bad Request', 
+                'message' => $error->erros()
+            ], 400);
         }
-    }
-
-    public function create()
-    {
-        return view('admin.show-cars.add');
     }
 
     public function store(Request $request)
@@ -50,7 +50,7 @@ class OwnersCarController extends Controller
             $pitcure2 = $request->file('pitcure2')->store('public/owner-cars');
             $pitcure3 = $request->file('pitcure3')->store('public/owner-cars');
 
-            Cars::create([
+            $CarsCreate = Cars::create([
                 'nopol' => $request->nopol,
                 'merk' => $request->merk,
                 'carModel' => $request->carModel,
@@ -64,18 +64,21 @@ class OwnersCarController extends Controller
                 'status' => "Available"
             ]);
 
+            return response([
+                'code' => '201', 
+                'status' => 'Created',
+                'data' => $CarsCreate
+            ], 201);
+
             // return redirect back 
             return redirect()->back()->with(['success' => 'Data Berhasil Di Tambahkan']);
         } catch (\Throwable $error) {
-            return $error->getMessage();
+            return response([
+                'code' => '400', 
+                'status' => 'Bad Request',
+                'message' => $error->erros()
+            ], 400);
         }
-    }
-
-    public function edit(String $id)
-    {
-        // get data 
-        $data = Cars::find($id);
-        return view('admin.show-cars.edit', compact('data'));
     }
 
     public function update(Request $request, $id)
@@ -128,10 +131,18 @@ class OwnersCarController extends Controller
                 'detail' => $request->detail
             ]);
 
-            // return redirect back 
-            return redirect()->back()->with(['success' => 'Data Berhasil Di Tambahkan']);
+            return response([
+                'code' => '200', 
+                'status' => 'OK',
+                'data' => $data 
+            ], 200);
+
         } catch (\Throwable $error) {
-            return $error->getMessage();
+            return response([
+                'code' => '400', 
+                'status' => 'Bad Request',
+                'message' => $error->erros()
+            ], 400);
         }
     }
 
@@ -142,9 +153,18 @@ class OwnersCarController extends Controller
             $data = Cars::find($id);
             $data->delete();
 
-            return redirect()->back()->with(['success' => 'Data Berhasil Di Hapus']);
+            return response([
+                'code' => '200', 
+                'status' => 'OK',
+                'message' => 'Data Deleted',
+            ], 200);
+
         } catch (\Throwable $error) {
-            return $error->getMessage();
+            return response([
+                'code' => '400', 
+                'status' => 'Bad Request',
+                'message' => $error->erros()
+            ], 400);
         }
     }
 }

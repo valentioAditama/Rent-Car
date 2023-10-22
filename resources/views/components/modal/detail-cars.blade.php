@@ -14,7 +14,7 @@
               <input type="text" class="form-control form-control-sm" value="{{$datas->nopol}}" readonly>
             </div>
             <div class="mb-3">
-              <label for="merk">Merk</label>
+              <label for="merk">Brand</label>
               <input type="text" class="form-control form-control-sm" value="{{$datas->merk}}" readonly>
             </div>
             <div class="mb-3">
@@ -22,15 +22,15 @@
               <input type="text" class="form-control form-control-sm" value="{{$datas->carModel}}" readonly>
             </div>
             <div class="mb-3">
-              <label for="kilometerAwal">Kilometer Awal</label>
+              <label for="kilometerAwal">Kilometer</label>
               <input type="text" class="form-control form-control-sm" value="{{$datas->kilometerAwal}}" readonly>
             </div>
             <div class="mb-3">
-              <label for="warna">Warna</label>
+              <label for="warna">Color</label>
               <input type="text" class="form-control form-control-sm" value="{{$datas->warna}}" readonly>
             </div>
             <div class="mb-3">
-              <label for="passenger">Passenger</label>
+              <label for="passenger">Passengers</label>
               <input type="text" class="form-control form-control-sm" value="{{$datas->passenger}}" readonly>
             </div>
             <div class="mb-3">

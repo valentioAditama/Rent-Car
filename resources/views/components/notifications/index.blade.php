@@ -10,3 +10,16 @@
   });
 </script>
 @endif
+
+@if (session('failed'))
+<script>
+  // Show Notification
+  document.addEventListener('DOMContentLoaded', function() {
+    Swal.fire(
+      'error!',
+      `{{ session('failed') }}`,
+      'error'
+    );
+  });
+</script>
+@endif

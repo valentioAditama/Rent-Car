@@ -1,3 +1,26 @@
+@if(Auth::guest())
+@foreach($data as $datas)
+<!-- Modal -->
+<div class="modal fade" id="modal-booked{{$datas->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Customer Booked</h5>
+      </div>
+      <div class="modal-body">
+          <div class="row justify-content-center">
+            <h4>Please Login First</h4>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+@endforeach
+@else
 @foreach($data as $datas)
 <!-- Modal -->
 <div class="modal fade" id="modal-booked{{$datas->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -55,7 +78,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="customer_name" class="form-label">Customer Name</label>
-                  <input type="text" class="form-control form-control-sm" id="customer_name" name="customer_name" required>
+                  <input type="text" class="form-control form-control-sm" id="customer_name" name="customer_name" value="{{Auth::user()->name}}" readonly required>
                 </div>
                 <div class="mb-3">
                   <label for="contact" class="form-label">Contact Number</label>
@@ -63,7 +86,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control form-control-sm" id="email" name="email">
+                  <input type="email" class="form-control form-control-sm" id="email" name="email" value="{{Auth::user()->email}}" readonly required>
                 </div>
               </div>
             </div>
@@ -78,3 +101,4 @@
   </div>
 </div>
 @endforeach
+@endif

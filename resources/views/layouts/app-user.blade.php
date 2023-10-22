@@ -38,7 +38,7 @@
             <div id="content">
                 <!-- navbar -->
                 @include('components.navbar.index')
-                <!--  -->
+                <!-- -------- -->
                 <!-- Begin Page Content -->
                 @yield('content')
                 <!-- /.container-fluid -->
@@ -60,6 +60,21 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+
+    <script>
+        var span = document.getElementById('time');
+
+        function time() {
+            var d = new Date();
+            var s = d.getSeconds();
+            var m = d.getMinutes();
+            var h = d.getHours();
+            span.textContent =
+                ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
+        }
+
+        setInterval(time, 50);
+    </script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>

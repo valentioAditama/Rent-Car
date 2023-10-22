@@ -20,6 +20,10 @@ class adminMiddleware
             return $next($request);
         }
 
+        if (Auth()->check() && Auth::user()->role == "user") {
+            return redirect('/');
+        }
+
         return redirect('/login');
     }
 }
